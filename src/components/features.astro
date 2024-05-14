@@ -3,64 +3,97 @@ import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
 import type { FeatureItem } from "~/types";
 
+const kampuni = 'Kasino la Aviator Tanzania'
+
 const features: Array<FeatureItem> = [
   {
-    title: "Bring Your Own Framework",
+    title: "PATA Tsh. 50,000 BURE! Kwenye Deposit ya Kwanza",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+      `Jisajili kwa mara ya kwanza na ${kampuni} na upokee Ofa ya Tsh. 50,000 BURE. Ofa hii itatumika kucheza michezo mbalimbali ya Casino za Mtandaoni pamoja na Aviator (Kindege). Withdraw pesa yako ukishinda`,
     icon: "mdi:handshake",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "AVIATOR OFA! ✈ Mizunguko 15 ya Bure ya Kindege cha Aviator",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "mdi:feather",
+      `Ofa hii inapatikana kwa wateja wapya watakao jisajili na ${kampuni}. Pata Mizunguko 15 ya Bure ya Aviator na upaishe kindege chako kwenye ushindi. Shinda mpaka milioni 3 kupitia kampuni bora ya Aviator Tanzania`,
+    icon: "mdi:aeroplane",
   },
   {
-    title: "On-Demand Components",
+    title: "Michezo ya Slots Kasino",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page. If the user never sees it, they never load it.",
-    icon: "mdi:directions-fork",
+      "Ukiachana na Aviator, katika Kasino, cheza michezo mbalimbali ya Slots mtandaoni. Shinda slots kama vile Kasino la Moona of RA, Kasino la Sevens and Fruits, Kasino la Lucky Fruits, 777, n.k",
+    icon: "mdi:casino",
   },
   {
-    title: "Broad Integration",
+    title: "Free 2 Win / Shinda bila Pesa",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any of your favorite npm packages.",
-    icon: "mdi:graph",
+      "Jishindie Milioni 10 kwa kujibu maswali yetu ya kila siku kuhusiana na michezo ya kasino pamoja na mpira. Jibu maswali nane kwa usahihi ujinyakulie kitita cha Tsh. 10,000,000 BURE!. Kushiriki ni bure kabisa",
+    icon: "mdi:format-list-numbers",
   },
   {
-    title: "SEO Enabled",
+    title: "Ofa ya Asilimia 100",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication.",
-    icon: "mdi:search-web",
+      "Pata ofa ya Asilimia 100, Deposit Tsh. 100,000 ujipatie Tsh. 100,000 nyingine BURE!. Tumia ofa hii kucheza michezo ya casino mtandaoni, kucheza Aviator bure au kuweka bets kwenye michezo mbalimbali kama vile Mpira wa Miguu, Kikapu na Tennis",
+    icon: "mdi:cash-100",
   },
   {
-    title: "Community",
+    title: "Spin to Win & Wheel of Fortune",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "mdi:account-group",
+      "Spin to Win mtandaoni. Zungusha na ushinde kila dakika. Tumekuletea mchezo wa kasino wa kuzingusha kila dakika kuchagua namba na rangi. Shinda mchezo wetu huu wa kasino mrahisi.",
+    icon: "mdi:casino-chip",
   },
 ];
 ---
 
-<ContentSection title="Features" id="features">
+<ContentSection title="Ofa za Casino la Aviator Tanzania" id="features">
   <Fragment slot="lead">
-    Astro comes <span class="text-primary">batteries included</span>. It takes
-    the best parts of
-    <span class="text-primary">state-of-the-art</span>
-    tools and adds its own <span class="text-primary">innovations</span>.
+    Ukijiunga na <span class="text-primary">Aviator Tanzania Casino</span> Utanyakua
+    Ofa Mbalimbali Zikiwemo
+    <span class="text-primary">Tsh. 50,000 BURE!</span> kwa Deposit ya Kwanza Pamoja
+    na Ofa ya Kupaisha <span class="text-primary">Aviator</span> bure hadi mara 15.
   </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <ul
+    class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    style="cursor: pointer;"
+    onclick="window.open('http://bet-link.top/gsb/register')"
+  >
     {
       features.map(({ title, description, icon }) => (
-        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6 g-li">
           <div class="size-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} class="size-full" />
+            <Icon id="g-icon" name={icon} class="size-full" />
           </div>
-          <p class="text-center font-extrabold text-xl">{title}</p>
-          <p class="text-center text-offset text-sm">{description}</p>
+          <p id="g-title" class="text-center font-extrabold text-xl">
+            {title}
+          </p>
+          <p class="text-center text-offset text-sm desc">{description}</p>
         </li>
       ))
     }
   </ul>
 </ContentSection>
+
+<style>
+  .g-li:hover, .g-li:active {
+    background-color: #ffffff;
+  }
+  #g-title, #g-icon {
+    color: #1e90ff;
+  }
+
+  .g-li:active #g-title, .g-li:active #g-icon, .g-li:hover #g-title, .g-li:hover #g-icon {
+    color: #808080;
+  }
+
+  .g-li:active .desc, .g-li:hover .desc {
+    text-decoration: underline;
+  }
+
+  /* .g-li:active #g-title, .g-li:active #g-icon {
+    color: #808080;
+  }
+
+  .desc:hover, .desc:active {
+    text-decoration: underline;
+  } */
+</style>
